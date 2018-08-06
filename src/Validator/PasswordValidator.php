@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 05/08/18
- * Time: 16:27
- */
 
 namespace App\Validator;
-
 
 class PasswordValidator
 {
