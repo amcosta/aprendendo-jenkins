@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('Mount Docker') {
             steps {
-                sh docker-compose up -d
+                sh 'docker-compose up -d'
             }
         }
         stage('Build') {
             steps {
-                sh docker run --rm -it -v$(pwd):/app composer install
+                sh 'docker run --rm -it -v$(pwd):/app composer install'
             }
         }
         stage('Test') {
             steps {
-                sh docker exec -it jk_php vendor/bin/phpunit
+                sh 'docker exec -it jk_php vendor/bin/phpunit'
             }
         }
         stage('Deploy') {
